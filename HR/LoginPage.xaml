@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="HR.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Login" Style="{StaticResource HeaderTextBlockStyle}" Margin="0,0,0,20" />
+            <TextBox x:Name="txtEmployeeID" Header="Employee ID" Width="300" />
+            <PasswordBox x:Name="pwdPassword" Header="Password" Width="300" Margin="0,10,0,0" />
+            <Button x:Name="btnLogin" Content="Login" Width="100" Height="40" Margin="0,20,0,0" Click="btnLogin_Click" />
+        </StackPanel>
+        <Image HorizontalAlignment="Left" Height="171" Margin="13,57,0,0" VerticalAlignment="Top" Width="613" Source="/Assets/company.png"/>
+    </Grid>
+</Page>

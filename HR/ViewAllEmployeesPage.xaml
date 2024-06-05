@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="HR.ViewAllEmployeesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <CommandBar VerticalAlignment="Top">
+                <AppBarButton Icon="Back" Label="Back" Click="BackButton_Click"/>
+                <AppBarButton Icon="ClosePane" Label="Exit" Click="ExitButton_Click"/>
+            </CommandBar>
+
+            <StackPanel Grid.Row="1" Spacing="15" Margin="0,20,0,0">
+                <TextBlock Text="Employee List" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
+
+                <ListView x:Name="lstEmployees" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Gray" BorderThickness="1" Margin="5">
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Employee ID:" FontWeight="Bold" Grid.Row="0" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding EmployeeID}" Grid.Row="0" Grid.Column="1"/>
+
+                                    <TextBlock Text="Name:" FontWeight="Bold" Grid.Row="1" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
+
+                                    <TextBlock Text="Role:" FontWeight="Bold" Grid.Row="2" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Role}" Grid.Row="2" Grid.Column="1"/>
+
+                                    <TextBlock Text="IC No:" FontWeight="Bold" Grid.Row="3" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding ICNo}" Grid.Row="3" Grid.Column="1"/>
+
+                                    <TextBlock Text="Gender:" FontWeight="Bold" Grid.Row="4" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Gender}" Grid.Row="4" Grid.Column="1"/>
+
+                                    <TextBlock Text="Email Address:" FontWeight="Bold" Grid.Row="5" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding EmailAddress}" Grid.Row="5" Grid.Column="1"/>
+                                    
+                                    <TextBlock Text="Contact No:" FontWeight="Bold" Grid.Row="6" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding ContactNo}" Grid.Row="6" Grid.Column="1"/>
+
+                                    <TextBlock Text="Address:" FontWeight="Bold" Grid.Row="7" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Address}" Grid.Row="7" Grid.Column="1"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
